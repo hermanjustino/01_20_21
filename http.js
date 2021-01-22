@@ -1,7 +1,11 @@
 const http = require('http');
+var dt = require('./myModule');
+var url = require('url');
+var fs = require('fs');
 
 http.createServer((req, res) => {
-    res.write('hello world');
+    res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write("The date and time are currently: " + dt.myDateTime());
     res.end();
 }
 )
